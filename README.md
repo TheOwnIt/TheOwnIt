@@ -27,7 +27,3 @@ Jestem C++ Developerem z doświadczeniem w tworzeniu zaawansowanych projektów z
 - :zap: Zaangażowany 
 - :bulb: Z łatwością rozwiązuje najtrudniejsze problemy 
 - :rocket: Szybko się uczę
-
-## Inne 
-- :c++: Poziom Junior
-- Doświadczenie w innych technologiach
