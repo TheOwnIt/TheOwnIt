@@ -1,32 +1,29 @@
-# C++ Developer
+# C++ Developer 
 
-## Doświadczenie
-- repricer amazon (mysql, rest api)
-- plentymarkets <-> inposty (rest api)
+## Doświadczenie 
+- Repricer Amazon (MySQL, REST API)
+- Plentymarkets <-> Inposty (REST API)
 
 ## Umiejętności
-- C++
-- SQL w c++
-- REST API w c++
-- programowanie obiektowe c++
-- SQL
-- obsługa Postman
-- specjalista w Plentymarkets
-- Scrum Guide
-- praca w Asana
-- doświadczenie w prowadzeniu zespołu
+- C++ 
+- SQL w C++ 
+- REST API w C++ 
+- Programowanie obiektowe w C++ 
+- SQL 
+- Obsługa Postman 
+- Specjalista Plentymarkets
+- Scrum Guide 
+- Praca w Asana 
+- Doświadczenie w prowadzeniu zespołu 
 
-## O mnie
-Jestem początkującym, zaangażowanym C++ Developerem z doświadczeniem w tworzeniu zaawansowanych projektów z wykorzystaniem technologii takich jak MySQL i REST API. Z łatwością rozwiązuję najtrudniejsze problemy i szybko się uczę. 
+## Krótki opis 
+Jestem C++ Developerem z doświadczeniem w tworzeniu zaawansowanych projektów z wykorzystaniem technologii takich jak MySQL, REST API czy programowanie obiektowe. Moim atutem jest znajomość języka C++ oraz SQL w jego kontekście, co pozwala mi na realizację bardziej zaawansowanych projektów. 
 
 ## Kontakt
 - Email: michal.lewandowski994@gmail.com
 
-<p align="center">
-  <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
-  <img src="https://img.icons8.com/color/48/000000/sql.png"/>
-  <img src="https://img.icons8.com/color/48/000000/postman.png"/>
-  <img src="https://img.icons8.com/color/48/000000/scrum.png"/>
-  <img src="https://img.icons8.com/color/48/000000/asana.png"/>
-  <img src="https://img.icons8.com/color/48/000000/team.png"/>
-</p>
+## Poziom
+- :beginner: Początkujący 
+- :zap: Zaangażowany 
+- :bulb: Z łatwością rozwiązuje najtrudniejsze problemy 
+- :rocket: Szybko się uczę
