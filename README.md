@@ -1,24 +1,31 @@
-## C++ Developer
-### Doświadczenie
+# C++ Developer 
+
+## Projekty
 - Repricer Amazon (MySQL, REST API)
 - Plentymarkets <-> Inposty (REST API)
 
-### Umiejętności
+## Umiejętności
 - C++ 
 - SQL w C++ 
-- REST API w C++
-- Programowanie obiektowe w C++
-- SQL
-- Obsługa Postman
-- Plentymarkets specialist
+- REST API w C++ 
+- Programowanie obiektowe w C++ 
+- SQL 
+- Obsługa Postman 
+- Specialist w Plentymarkets 
 
-### Dodatkowe kwalifikacje
-- Praca w systemie Scrum 
-- Praca w Asanie 
-- Doświadczenie w prowadzeniu zespołu
+## Scrum Guide i praca w Asana
+Posiadam doświadczenie w pracy zgodnie ze Scrum Guide, a także w pracy z narzędziem Asana do zarządzania projektami. 
 
-### Krótki opis
-Jestem C++ Developerem z doświadczeniem w tworzeniu zaawansowanych projektów z wykorzystaniem technologii takich jak MySQL, REST API czy programowanie obiektowe. Aktualnie pracuję nad dwoma projektami: repricerem Amazon, w którym wykorzystuję MySQL i REST API oraz integracją Plentymarkets z Inpostami, która również opiera się na REST API. 
+## Prowadzenie zespołu
+Mam doświadczenie w prowadzeniu zespołu, co pozwala mi na efektywną współpracę i realizację projektów. 
 
-### Dane kontaktowe
-Email: michal.lewandowski994@gmail.com
+## Kontakt 
+Jeśli szukasz doświadczonego C++ Developera, zapraszam do kontaktu! 
+
+Email: michal.lewandowski994@gmail.com 
+
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-expert-green" alt="C++ expert"/>
+  <img src="https://img.shields.io/badge/Scrum-experienced-blue" alt="Scrum experienced"/>
+  <img src="https://img.shields.io/badge/team%20leader-yes-orange" alt="Team leader"/>
+</p>
