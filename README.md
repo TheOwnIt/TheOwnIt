@@ -1,16 +1,26 @@
-### Hi there 👋
+# C++ Developer
 
-<!--
-**TheOwnIt/TheOwnIt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Cześć! 
 
-Here are some ideas to get you started:
+Jestem C++ Developerem z doświadczeniem w tworzeniu zaawansowanych projektów z wykorzystaniem technologii takich jak MySQL, REST API czy programowanie obiektowe. Aktualnie pracuję nad dwoma projektami: repricerem Amazon, w którym wykorzystuję MySQL i REST API oraz integracją Plentymarkets z Inpostami, która również opiera się na REST API. 
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Moim atutem jest znajomość języka C++ oraz SQL w jego kontekście, co pozwala mi na realizację bardziej zaawansowanych projektów. Zdobyte doświadczenie pozwala mi na łatwą obsługę narzędzi takich jak Postman czy Plentymarkets, co umożliwia mi efektywniejsze rozwiązywanie problemów i szybsze wykonywanie zadań. 
+
+Jeśli szukasz doświadczonego i zaangażowanego C++ Developera, to zapraszam do kontaktu. Chętnie dołączę do twojego zespołu i pomogę w realizacji najważniejszych projektów.
+
+
+---
+
+
+## Projekty
+- Repricer Amazon (MySQL, REST API)
+- Plentymarkets <-> Inposty (REST API)
+
+## Umiejętności
+- C++
+- SQL w C++
+- REST API w C++
+- Programowanie obiektowe C++
+- SQL
+- Obsługa Postman
+- Plentymarkets specialist
