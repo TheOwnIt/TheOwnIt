@@ -1,31 +1,43 @@
-# C++ Developer 
+# C++ Developer
 
 ## Projekty
-- Repricer Amazon (MySQL, REST API)
-- Plentymarkets <-> Inposty (REST API)
+- repricer amazon (mysql, REST API)
+- Plentymarkets <-> Inpost (REST API)
 
 ## Umiejętności
-- C++ 
-- SQL w C++ 
-- REST API w C++ 
-- Programowanie obiektowe w C++ 
-- SQL 
-- Obsługa Postman 
-- Specialist w Plentymarkets 
+- C++
+- SQL w C++
+- REST API w C++
+- programowanie obiektowe C++
+- SQL
+- obsługa Postman
+- Plentymarkets specialist
 
-## Scrum Guide i praca w Asana
-Posiadam doświadczenie w pracy zgodnie ze Scrum Guide, a także w pracy z narzędziem Asana do zarządzania projektami. 
+## Postępowanie zgodne ze Scrum Guide
+- Praca w zespole zgodnie z metodologią Scrum
+- Doświadczenie w prowadzeniu zespołu
 
-## Prowadzenie zespołu
-Mam doświadczenie w prowadzeniu zespołu, co pozwala mi na efektywną współpracę i realizację projektów. 
+## Technologie
+- MySQL
+- REST API
+- C++
+- SQL
+- Postman
+- Plentymarkets
 
-## Kontakt 
-Jeśli szukasz doświadczonego C++ Developera, zapraszam do kontaktu! 
+## Kontakt
+E-mail: michal.lewandowski994@gmail.com
 
-Email: michal.lewandowski994@gmail.com 
+## O mnie
+- Poziom początkujący
+- Zaangażowany
+- Łatwo rozwiązuje najtrudniejsze problemy
+- Szybko się uczę
 
 <p align="center">
-  <img src="https://img.shields.io/badge/C%2B%2B-expert-green" alt="C++ expert"/>
-  <img src="https://img.shields.io/badge/Scrum-experienced-blue" alt="Scrum experienced"/>
-  <img src="https://img.shields.io/badge/team%20leader-yes-orange" alt="Team leader"/>
+  <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
+  <img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/>
+  <img src="https://img.icons8.com/color/48/000000/rest-api.png"/>
+  <img src="https://img.icons8.com/color/48/000000/postman.png"/>
+  <img src="https://img.icons8.com/color/48/000000/scrum.png"/>
 </p>
