@@ -1,82 +1,117 @@
-### Dokumentacja aplikacji "Intrastat CSV Generator"
+## Dokumentacja Pluginu VatScraper do Plentymarkets
 
-#### Opis aplikacji
+### Spis treści
 
-Aplikacja "Intrastat CSV Generator" jest narzędziem desktopowym opartym na bibliotece Tkinter, które umożliwia generowanie plików CSV wymaganych do raportowania Intrastat. Aplikacja łączy się z serwerem Odoo, pobiera dane dotyczące faktur oraz produktów, a następnie tworzy pliki CSV zgodnie z określonymi specyfikacjami. Użytkownik może wybrać rok i miesiąc, dla którego dane mają być generowane, a także śledzić postęp tworzenia plików CSV za pomocą paska postępu.
+1. [Wstęp](#wstęp)
+2. [Struktura pluginu](#struktura-pluginu)
+3. [Omówienie kluczowych klas](#omówienie-kluczowych-klas)
+   - [VatScraperServiceProvider](#vatscraperserviceprovider)
+   - [CreateShippingServiceProvider](#createshippingserviceprovider)
+   - [ShippingServiceProvider](#shippingserviceprovider)
+   - [Constants](#constants)
+   - [Procedures](#procedures)
+   - [ShipmentController](#shipmentcontroller)
+4. [Funkcjonalność](#funkcjonalność)
+5. [Integracje zewnętrzne](#integracje-zewnętrzne)
+6. [Logowanie i debugowanie](#logowanie-i-debugowanie)
 
-#### Wymagania systemowe
+---
 
-- Python 3.x
-- Biblioteki: `tkinter`, `ttk` (część standardowej biblioteki Tkinter), `requests`, `csv`, `calendar`, `threading`
-- Dostęp do serwera Odoo z odpowiednimi uprawnieniami
+### Wstęp
 
-#### Konfiguracja aplikacji
+Plugin **VatScraper** dla platformy **Plentymarkets** służy do zarządzania procesami zamówień, weryfikacji danych firmowych poprzez zewnętrzne API oraz integracji z systemem Odoo. Plugin ten automatyzuje procesy związane z obsługą zamówień i przetwarzaniem danych klientów, umożliwiając łatwiejsze zarządzanie zamówieniami i ich integrację z zewnętrznymi systemami.
 
-Przed uruchomieniem aplikacji należy skonfigurować połączenie z serwerem Odoo poprzez uzupełnienie poniższych zmiennych:
+### Struktura pluginu
 
-```python
-odoo_url = "https://www.benbow.pl/jsonrpc"  # URL do serwera Odoo
-odoo_db = "xxx"  # Nazwa bazy danych Odoo
-odoo_username = xxx  # Nazwa użytkownika Odoo
-odoo_password = "xxx"  # Hasło użytkownika Odoo
-```
+Plugin składa się z kilku kluczowych komponentów:
 
-Zmienna `client_id` w funkcji `start_csv_generation` również powinna zostać dostosowana do konkretnego klienta, dla którego generowane są dane.
+- **Providers** - Dostawcy usług, takie jak `VatScraperServiceProvider`, które rejestrują usługi pluginu.
+- **Migrations** - Klasy odpowiedzialne za migracje danych, takie jak `CreateShippingServiceProvider`.
+- **Helpers** - Pomocnicze klasy i stałe, takie jak `ShippingServiceProvider` i `Constants`.
+- **EventProcedures** - Procedury zdarzeń, które reagują na określone zdarzenia w systemie, takie jak `Procedures`.
+- **Controllers** - Kontrolery, które zarządzają interakcją z zewnętrznymi usługami, takie jak `ShipmentController`.
 
-#### Instrukcja obsługi aplikacji
+### Omówienie kluczowych klas
 
-1. **Uruchomienie aplikacji**:
-   - Aplikację uruchamiamy w środowisku Python za pomocą komendy `python script.py`, gdzie `script.py` to nazwa pliku z kodem aplikacji.
+#### VatScraperServiceProvider
 
-2. **Interfejs użytkownika**:
-   - Po uruchomieniu aplikacji zobaczysz okno z polami wyboru dla roku i miesiąca oraz przyciskiem "Generuj CSV".
-   - Wybierz odpowiedni rok i miesiąc, dla którego chcesz wygenerować pliki CSV.
+Klasa `VatScraperServiceProvider` jest dostawcą usług dla pluginu VatScraper. Jest odpowiedzialna za rejestrację usług oraz procedur zdarzeń związanych z zamówieniami.
 
-3. **Generowanie plików CSV**:
-   - Kliknij przycisk "Generuj CSV", aby rozpocząć proces generowania plików CSV.
-   - Aplikacja rozpocznie pobieranie danych z Odoo w osobnym wątku, aby nie blokować interfejsu użytkownika.
-   - W trakcie pobierania danych oraz generowania plików, pasek postępu będzie wskazywał bieżący stan operacji.
+- **Metoda `register`**: Obecnie pusta, ale może być używana do rejestrowania usług pluginu.
+  
+- **Metoda `boot`**: Rejestruje procedurę zdarzeń `StartScrap` zdefiniowaną w klasie `Procedures`, która jest wywoływana, gdy wystąpi zdarzenie typu `ORDER`.
 
-4. **Zakończenie procesu**:
-   - Po zakończeniu generowania plików CSV pojawi się komunikat informujący o pomyślnym zakończeniu operacji.
-   - Pliki CSV zostaną zapisane w bieżącym katalogu roboczym, z nazwami w formacie `intrastat_{rok}_{miesiąc}_{numer_faktury}.csv`.
+#### CreateShippingServiceProvider
 
-#### Szczegóły dotyczące kodu
+Klasa `CreateShippingServiceProvider` zajmuje się migracją dostawców usług wysyłkowych w systemie Plentymarkets.
 
-1. **Funkcja `get_products_for_client`**:
-   - Pobiera faktury dla danego klienta (`client_id`) i określonego miesiąca/roku z Odoo.
-   - Zwraca listę faktur z odpowiednimi pozycjami fakturowymi.
+- **Właściwości**: 
+  - `$shippingServiceProviderRepository` - Instancja repozytorium dostawców usług wysyłkowych.
+  
+- **Metoda `__construct`**: Inicjalizuje repozytorium dostawców usług wysyłkowych.
+  
+- **Metoda `run`**: Aktualnie pusta, ale służy do uruchamiania logiki migracji.
 
-2. **Funkcja `get_product_details`**:
-   - Pobiera szczegóły produktów na podstawie identyfikatorów produktów (`product_ids`) uzyskanych z faktur.
-   - Zwraca listę szczegółowych informacji o produktach, takich jak identyfikator produktu, ilość, cena jednostkowa, itp.
+#### ShippingServiceProvider
 
-3. **Funkcja `get_product_weight`**:
-   - Pobiera wagę produktu oraz dodatkowe informacje, takie jak kod Intrastat i kraj pochodzenia.
-   - Zwraca wagę oraz dodatkowe informacje o produkcie.
+Klasa `ShippingServiceProvider` definiuje stałe dla dostawcy usług wysyłkowych używane przez plugin.
 
-4. **Funkcja `get_country_code`**:
-   - Tłumaczy nazwę kraju na jego kod dwuliterowy (ISO).
-   - Używana do zamiany nazw krajów na ich odpowiednie kody w pliku CSV.
+- **Stałe**:
+  - `PLUGIN_NAME` - Nazwa pluginu.
+  - `SHIPPING_SERVICE_PROVIDER_NAME` - Nazwa dostawcy usług wysyłkowych.
 
-5. **Funkcja `generate_intrastat_csv`**:
-   - Generuje pliki CSV dla określonego klienta i miesiąca/roku.
-   - Pobiera dane dotyczące faktur i produktów, przetwarza je, a następnie zapisuje do pliku CSV.
-   - Aktualizuje pasek postępu w interfejsie użytkownika.
+#### Constants
 
-6. **Funkcja `start_csv_generation`**:
-   - Uruchamia proces generowania plików CSV w osobnym wątku, aby nie blokować interfejsu użytkownika.
-   - Pobiera wybrane przez użytkownika wartości roku i miesiąca.
+Klasa `Constants` zawiera stałe używane w pluginie.
 
-7. **Konfiguracja GUI**:
-   - Tworzy główne okno aplikacji oraz interfejs użytkownika z elementami takimi jak etykiety, listy rozwijane (combobox) do wyboru roku i miesiąca, przycisk do generowania CSV oraz pasek postępu.
+- **Stałe**:
+  - `PLUGIN_NAME` - Nazwa pluginu.
+  - `VOLUME_TYPE_FROM_SHIPPING_PACKAGE` - Typ objętości pochodzący z opakowania wysyłkowego.
+  - `VOLUME_TYPE_FROM_ITEMS_DATA` - Typ objętości pochodzący z danych przedmiotów.
 
-#### Uwagi dodatkowe
+#### Procedures
 
-- Aplikacja jest zaprojektowana tak, aby działała asynchronicznie, co zapewnia płynność interfejsu użytkownika nawet podczas długotrwałych operacji.
-- W przypadku błędów w komunikacji z Odoo, aplikacja wyświetla odpowiednie komunikaty w konsoli oraz oknie dialogowym Tkinter.
-- Przed użyciem aplikacji upewnij się, że masz odpowiednie uprawnienia dostępu do serwera Odoo oraz że serwer Odoo jest prawidłowo skonfigurowany.
+Klasa `Procedures` definiuje logikę procedur zdarzeń uruchamianych w odpowiedzi na określone zdarzenia systemowe.
 
-### Koniec dokumentacji
+- **Właściwości**: Przechowują konfiguracje, tokeny API, repozytorium zamówień i inne niezbędne dane.
+  
+- **Metoda `StartScrap`**: Główna procedura uruchamiana po wystąpieniu zdarzenia `ORDER`. Pobiera zamówienia, weryfikuje dane klienta, a także integruje się z zewnętrznymi API do sprawdzania danych firmowych i rejestrowania leadów w systemie Odoo.
 
-Aplikacja "Intrastat CSV Generator" powinna być teraz gotowa do użycia zgodnie z powyższymi instrukcjami. W razie potrzeby modyfikacji lub rozbudowy funkcjonalności, kod jest otwarty na dalsze dostosowania.
+- **Metoda `CodeKitMagic`**: Wysyła zapytanie do zewnętrznego API w celu walidacji numeru VAT i zwraca nazwę firmy.
+
+- **Metoda `checkCompanyDetails`**: Wysyła zapytania do API Outscraper w celu uzyskania szczegółów firmy.
+
+- **Metoda `transfterOdoo`**: Przesyła dane firmy do systemu Odoo i tworzy nowy lead.
+
+- **Metoda `getEmailScrap`**: Wysyła zapytanie do API Outscraper w celu uzyskania kontaktów i adresów email.
+
+- **Metoda `getCountryIdByCode`**: Wysyła zapytanie do API Odoo w celu uzyskania identyfikatora kraju na podstawie kodu kraju.
+
+#### ShipmentController
+
+Klasa `ShipmentController` zarządza wysyłkami.
+
+- **Metoda `getLabels`**: Obecnie zwraca pustą tablicę, może być używana do pobierania etykiet wysyłkowych.
+
+### Funkcjonalność
+
+Plugin VatScraper obsługuje wiele funkcji, w tym:
+
+1. **Rejestracja procedur zdarzeń** - Automatyczne uruchamianie procedur w odpowiedzi na określone zdarzenia zamówień.
+2. **Walidacja danych firmowych** - Weryfikacja numeru VAT i innych szczegółów firmy za pomocą zewnętrznego API.
+3. **Integracja z Odoo** - Automatyczne przesyłanie danych do systemu Odoo, tworzenie leadów i aktualizacja danych.
+4. **Obsługa zamówień** - Przetwarzanie i analizowanie zamówień, w tym dodatkowych zamówień tego samego klienta.
+
+### Integracje zewnętrzne
+
+Plugin integruje się z następującymi usługami zewnętrznymi:
+
+- **Outscraper** - Używany do weryfikacji danych firmowych oraz pobierania kontaktów i adresów email.
+- **Odoo** - System CRM używany do tworzenia leadów i zarządzania danymi firmowymi.
+- **Zewnętrzne API do walidacji VAT** - Używane do walidacji numerów VAT klientów.
+
+### Logowanie i debugowanie
+
+Plugin intensywnie wykorzystuje logowanie do śledzenia błędów i procesów. Wszystkie główne operacje, w tym zapytania do zewnętrznych API, wyniki oraz błędy są logowane za pomocą metody `getLogger(Constants::PLUGIN_NAME)->error()`.
+
+Logi są kluczowe dla debugowania i monitorowania działania pluginu w środowisku produkcyjnym. Zaleca się regularne sprawdzanie logów, aby upewnić się, że wszystkie procesy przebiegają poprawnie i aby szybko reagować na wszelkie nieprawidłowości.
