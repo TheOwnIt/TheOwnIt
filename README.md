@@ -3,6 +3,10 @@
 ## Doświadczenie 
 - Repricer Amazon (MySQL, REST API)
 - Plentymarkets <-> Inposty (REST API)
+- Plentymarkets <-> Baselinker (REST API)
+- Plentymarkets <-> Odoo (REST API)
+- Odoo Generowanie plików Intrastat
+- CSV tłumacz AI
 
 ## Umiejętności
 - C++ 
@@ -10,6 +14,8 @@
 - REST API w C++ 
 - Programowanie obiektowe w C++ 
 - SQL 
+- PHP
+- Python
 - Obsługa Postman 
 - Specjalista Plentymarkets
 - Scrum Guide 
