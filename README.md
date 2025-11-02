@@ -7,9 +7,9 @@ Specjalizuję się w integracjach i automatyzacjach dla plentyONE (plentymarkets
 ## Doświadczenie (wybrane)
 
 * Integracja **plentyONE ↔ BaseLinker (Base.com)**. ([setup.pl][1])
-* Wtyczki logistyczne: **FedEx**, **Global24**, **Colissimo** (statusy, wysyłki, automatyzacje). ([setup.pl][1])
-* Narzędzia operacyjne: **MarginCalc** (automatyczna kalkulacja marż), wykrywanie duplikatów zamówień. ([setup.pl][1])
-* Integracje podatkowo-rozliczeniowe: **amavat®**. ([setup.pl][1])
+* Wtyczki logistyczne: **FedEx**, **Global24**, **Colissimo** (statusy, wysyłki, automatyzacje).
+* Narzędzia operacyjne: **MarginCalc** (automatyczna kalkulacja marż), wykrywanie duplikatów zamówień.
+* Integracje podatkowo-rozliczeniowe: **amavat®**. 
 
 ## Stack
 
