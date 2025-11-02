@@ -1,4 +1,4 @@
-# Integration Developer — plentyONE × BaseLinker
+# Integration Developer — plentyONE (plentymarkets) × Base. (Baselinker)
 
 ## O mnie
 
