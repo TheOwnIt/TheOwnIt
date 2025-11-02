@@ -1,35 +1,20 @@
-# C++ Developer 
+# Integration Developer — plentyONE × BaseLinker
 
-## Doświadczenie 
-- Repricer Amazon (MySQL, REST API)
-- Plentymarkets <-> Inposty (REST API)
-- Plentymarkets <-> Baselinker (REST API)
-- Plentymarkets <-> Odoo (REST API)
-- Odoo Generowanie plików Intrastat
-- CSV tłumacz AI
+## O mnie
 
-## Umiejętności
-- C++ 
-- SQL w C++ 
-- REST API w C++ 
-- Programowanie obiektowe w C++ 
-- SQL 
-- PHP
-- Python
-- Obsługa Postman 
-- Specjalista Plentymarkets
-- Scrum Guide 
-- Praca w Asana 
-- Doświadczenie w prowadzeniu zespołu 
+Specjalizuję się w integracjach i automatyzacjach dla plentyONE (plentymarkets) oraz BaseLinker. Tworzę i utrzymuję wtyczki oraz łączę systemy ERP/marketplace/logistykę, usprawniając przepływ danych i operacje.
 
-## Krótki opis 
-Jestem C++ Developerem z doświadczeniem w tworzeniu zaawansowanych projektów z wykorzystaniem technologii takich jak MySQL, REST API czy programowanie obiektowe. Moim atutem jest znajomość języka C++ oraz SQL w jego kontekście, co pozwala mi na realizację bardziej zaawansowanych projektów. 
+## Doświadczenie (wybrane)
+
+* Integracja **plentyONE ↔ BaseLinker (Base.com)**. ([setup.pl][1])
+* Wtyczki logistyczne: **FedEx**, **Global24**, **Colissimo** (statusy, wysyłki, automatyzacje). ([setup.pl][1])
+* Narzędzia operacyjne: **MarginCalc** (automatyczna kalkulacja marż), wykrywanie duplikatów zamówień. ([setup.pl][1])
+* Integracje podatkowo-rozliczeniowe: **amavat®**. ([setup.pl][1])
+
+## Stack
+
+C++ (OOP, REST, SQL), PHP, Python, MySQL, REST API, Postman. Praktyka: Scrum, Asana.
 
 ## Kontakt
-- Email: michal.lewandowski994@gmail.com
 
-## Poziom
-- :beginner: Początkujący 
-- :zap: Zaangażowany 
-- :bulb: Z łatwością rozwiązuje najtrudniejsze problemy 
-- :rocket: Szybko się uczę
+[michal@bylewandowski.pl](mailto:michal@bylewandowski.pl)
